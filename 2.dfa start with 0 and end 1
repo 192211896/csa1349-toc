@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdbool.h>
+bool isAccepted(const char *input) {
+    int i = 0;
+    if (input[i] != '0') return false;  
+    while (input[++i] != '\0');         
+    return input[i - 1] == '1';         
+}
+int main() {
+    char input[100];   
+    printf("Enter a string of 0s and 1s: ");
+    scanf("%s", input);
+    if (isAccepted(input))
+    printf("The string is accepted by the DFA.\n");
+    else
+    printf("The string is not accepted by the DFA.\n");
+    return 0;
+}
